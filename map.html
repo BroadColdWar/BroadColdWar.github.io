@@ -1,46 +1,66 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Map Room | Berlin Wall Project</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Divided City Map | Berlin Wall</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="topbar">
-    <a class="brand" href="index.html"><span class="stamp">FILE 1961</span><span>Berlin Wall Project</span></a>
-    <button class="menu-button" id="menuButton" aria-label="open menu">☰</button>
-    <nav class="nav" id="navLinks">
-      <a href="briefing.html">Briefing</a>
-      <a href="timeline.html">Timeline</a>
-      <a class="active" href="map.html">Map</a>
-      <a href="ib-analysis.html">IB Analysis</a>
-      <a href="today.html">Today</a>
-      <a href="sources.html">Sources</a>
-    </nav>
-  </header>
+  <div class="paper-grain"></div>
 
-  <main class="page-layout">
-    <section class="page-heading">
-      <p class="eyebrow">Section 03</p>
-      <h1>Map Room</h1>
-      <p>Add a Berlin map, border diagram, or checkpoint image here.</p>
+  <header class="topbar">
+  <a class="brand" href="index.html">Berlin Wall File</a>
+  <button class="menu-button" aria-label="open menu">☰</button>
+  <nav class="site-nav">
+    <a href="briefing.html">Briefing</a>
+    <a href="timeline.html">Timeline</a>
+    <a href="map.html">Map</a>
+    <a href="ib-analysis.html">IB Analysis</a>
+    <a href="today.html">Today</a>
+    <a href="sources.html">Sources</a>
+  </nav>
+</header>
+
+  <main class="page-wrap">
+
+    <section class="page-title">
+      <p class="label">File 03</p>
+      <h1>Divided City Map</h1>
+      <p>This is not meant to be a perfect map. It is a simple visual to explain the main idea fast.</p>
     </section>
 
-    <section class="map-board">
-      <div class="fake-map">
-        <div class="map-line"></div>
-        <button class="map-pin pin-one">1</button>
-        <button class="map-pin pin-two">2</button>
-        <button class="map-pin pin-three">3</button>
+    <section class="fake-map">
+      <div class="map-side west">
+        <h2>West Berlin</h2>
+        <p>Capitalist, backed by the U.S., Britain, and France.</p>
       </div>
 
-      <aside class="panel">
-        <h2>Location notes</h2>
-        <p id="mapNote" class="empty-text">Click a pin and replace this with your own map notes.</p>
-      </aside>
+      <div class="wall-line">
+        <span>Berlin Wall</span>
+      </div>
+
+      <div class="map-side east">
+        <h2>East Berlin</h2>
+        <p>Communist, controlled by East Germany and backed by the USSR.</p>
+      </div>
+
+      <button class="checkpoint">Checkpoint Charlie</button>
     </section>
+
+    <section class="note-card wide">
+      <h2>Why the geography matters</h2>
+      <p>
+        West Berlin was not connected directly to West Germany. That made it vulnerable,
+        symbolic, and hard to defend. It also made the city a constant Cold War flashpoint.
+      </p>
+    </section>
+
   </main>
+
+  <footer class="footer-note">
+    Cold War Mini Research Project — Berlin Wall, 1961-1989
+  </footer>
 
   <script src="script.js"></script>
 </body>

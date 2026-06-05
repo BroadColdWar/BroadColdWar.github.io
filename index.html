@@ -1,100 +1,92 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Berlin Wall Project</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Berlin Wall Dossier</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="scanline"></div>
+  <div class="paper-grain"></div>
 
   <header class="topbar">
-    <a class="brand" href="index.html">
-      <span class="stamp">FILE 1961</span>
-      <span>Berlin Wall Project</span>
-    </a>
+  <a class="brand" href="index.html">Berlin Wall File</a>
+  <button class="menu-button" aria-label="open menu">☰</button>
+  <nav class="site-nav">
+    <a href="briefing.html">Briefing</a>
+    <a href="timeline.html">Timeline</a>
+    <a href="map.html">Map</a>
+    <a href="ib-analysis.html">IB Analysis</a>
+    <a href="today.html">Today</a>
+    <a href="sources.html">Sources</a>
+  </nav>
+</header>
 
-    <button class="menu-button" id="menuButton" aria-label="open menu">☰</button>
+  <main class="page-wrap">
 
-    <nav class="nav" id="navLinks">
-      <a href="briefing.html">Briefing</a>
-      <a href="timeline.html">Timeline</a>
-      <a href="map.html">Map</a>
-      <a href="ib-analysis.html">IB Analysis</a>
-      <a href="today.html">Today</a>
-      <a href="sources.html">Sources</a>
-    </nav>
-  </header>
-
-  <main>
-    <section class="hero">
+    <section class="home-hero">
       <div class="hero-text">
-        <p class="eyebrow">Cold War mini research project</p>
+        <p class="label">Declassified Classroom File</p>
         <h1>The Berlin Wall</h1>
-        <p class="intro">
-          Placeholder intro goes here. This homepage is meant to feel like an archive file,
-          but the actual research can be added later.
+        <p class="big-intro">
+          A mini exhibit about how one wall split a city, became the clearest
+          symbol of the Cold War, and still matters when people talk about
+          borders, propaganda, surveillance, and political freedom.
         </p>
-
-        <div class="hero-buttons">
-          <a class="button main-button" href="briefing.html">Open the file</a>
-          <a class="button ghost-button" href="timeline.html">View timeline</a>
+        <div class="button-row">
+          <a class="main-button" href="briefing.html">Open the briefing</a>
+          <a class="quiet-button" href="timeline.html">View timeline</a>
         </div>
       </div>
 
-      <div class="hero-card">
-        <div class="photo-placeholder">
-          <span>Add Berlin Wall image here</span>
-        </div>
-        <div class="card-strip">
-          <span>ARCHIVE IMAGE</span>
-          <span>PLACEHOLDER</span>
-        </div>
-      </div>
+      <figure class="hero-photo">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/BerlinWall-BrandenburgGate.jpg" alt="People at the Berlin Wall near Brandenburg Gate">
+        <figcaption>Berlin Wall near Brandenburg Gate, November 1989.</figcaption>
+      </figure>
     </section>
 
-    <section class="grid-menu" aria-label="site sections">
-      <a class="section-card" href="briefing.html">
-        <span class="card-number">01</span>
-        <h2>Briefing</h2>
-        <p>Use this page for basic background and the central question.</p>
+    <section class="case-grid" aria-label="site sections">
+      <a class="case-card" href="briefing.html">
+        <span>01</span>
+        <h2>Mission Briefing</h2>
+        <p>The basics: what the Wall was, why it was built, and why Berlin mattered so much.</p>
       </a>
 
-      <a class="section-card" href="timeline.html">
-        <span class="card-number">02</span>
+      <a class="case-card" href="timeline.html">
+        <span>02</span>
         <h2>Timeline</h2>
-        <p>Use this page for key moments and turning points.</p>
+        <p>Important steps from postwar Germany to the opening of the Wall in 1989.</p>
       </a>
 
-      <a class="section-card" href="map.html">
-        <span class="card-number">03</span>
-        <h2>Map Room</h2>
-        <p>Use this page for places, zones, crossings, and geography.</p>
+      <a class="case-card" href="map.html">
+        <span>03</span>
+        <h2>Divided City</h2>
+        <p>A simple map-style page showing East Berlin, West Berlin, and checkpoints.</p>
       </a>
 
-      <a class="section-card" href="ib-analysis.html">
-        <span class="card-number">04</span>
+      <a class="case-card" href="ib-analysis.html">
+        <span>04</span>
         <h2>IB Analysis</h2>
-        <p>Use this page for theme connections and your own argument.</p>
+        <p>Connections to Cold War themes, authoritarian states, and class topics.</p>
       </a>
 
-      <a class="section-card" href="today.html">
-        <span class="card-number">05</span>
-        <h2>Today</h2>
-        <p>Use this page for modern connections and why it still matters.</p>
+      <a class="case-card" href="today.html">
+        <span>05</span>
+        <h2>Why It Matters Now</h2>
+        <p>How the memory of the Wall connects to modern politics and the future.</p>
       </a>
 
-      <a class="section-card" href="sources.html">
-        <span class="card-number">06</span>
-        <h2>Sources</h2>
-        <p>Keep all links, citations, and image credits here.</p>
+      <a class="case-card" href="sources.html">
+        <span>06</span>
+        <h2>Evidence Locker</h2>
+        <p>Image credits, websites, and source notes for the bibliography.</p>
       </a>
     </section>
+
   </main>
 
-  <footer>
-    <p>Built for IB History. Replace all placeholder text before submitting.</p>
+  <footer class="footer-note">
+    Cold War Mini Research Project — Berlin Wall, 1961-1989
   </footer>
 
   <script src="script.js"></script>
