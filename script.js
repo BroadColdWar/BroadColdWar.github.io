@@ -1,25 +1,36 @@
-var menuButton = document.querySelector('.menu-button');
-var siteNav = document.querySelector('.site-nav');
+const menuButton = document.querySelector('#menuButton');
+const navLinks = document.querySelector('#navLinks');
 
-if (menuButton && siteNav) {
-  menuButton.addEventListener('click', function () {
-    siteNav.classList.toggle('open');
+if (menuButton && navLinks) {
+  menuButton.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
   });
 }
 
-var revealButton = document.querySelector('.reveal-button');
-var hiddenAnswer = document.querySelector('.hidden-answer');
+const timelineCards = document.querySelectorAll('.time-card');
+const timelineDetail = document.querySelector('#timelineDetail');
 
-if (revealButton && hiddenAnswer) {
-  revealButton.addEventListener('click', function () {
-    hiddenAnswer.classList.toggle('show');
+if (timelineCards.length && timelineDetail) {
+  timelineCards.forEach((card) => {
+    card.addEventListener('click', () => {
+      const year = card.querySelector('span').textContent;
+      const title = card.querySelector('strong').textContent;
+
+      timelineDetail.innerHTML = `
+        <strong>${year}: ${title}</strong>
+        <p class="empty-text">Add the explanation for this event here.</p>
+      `;
+    });
   });
 }
 
-var timelineItems = document.querySelectorAll('.timeline-item');
+const mapPins = document.querySelectorAll('.map-pin');
+const mapNote = document.querySelector('#mapNote');
 
-for (var i = 0; i < timelineItems.length; i++) {
-  timelineItems[i].addEventListener('click', function () {
-    this.classList.toggle('open');
+if (mapPins.length && mapNote) {
+  mapPins.forEach((pin) => {
+    pin.addEventListener('click', () => {
+      mapNote.textContent = `Notes for map point ${pin.textContent}. Replace this with your research.`;
+    });
   });
 }
