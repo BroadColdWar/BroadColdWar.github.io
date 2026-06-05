@@ -3,84 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Berlin | Berlin Wall Project</title>
+  <title>Divided City Map | Berlin Wall Dossier</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="site-header">
-  <a class="logo" href="index.html">Berlin Wall Project</a>
+  <div class="paper-grain"></div>
+  <header class="topbar">
+  <a class="brand" href="index.html">
+    <span class="brand-small">Cold War File</span>
+    <span class="brand-main">Berlin Wall</span>
+  </a>
 
   <button class="menu-button" aria-label="open menu">☰</button>
 
   <nav class="site-nav">
-    <a href="briefing.html">Overview</a>
+    <a href="briefing.html">Briefing</a>
     <a href="timeline.html">Timeline</a>
-    <a href="map.html">Berlin</a>
+    <a href="map.html">Map</a>
     <a href="ib-analysis.html">IB Analysis</a>
     <a href="today.html">Today</a>
     <a href="sources.html">Sources</a>
   </nav>
 </header>
 
-  <main>
+  <main class="page-wrap">
 
-    <section class="page-hero">
-      <p class="eyebrow">Berlin</p>
-      <h1>Why the city mattered</h1>
+    <section class="page-title">
+      <p class="stamp">Divided City</p>
+      <h1>Interactive Map</h1>
       <p>
-        Berlin's geography made it unusual. West Berlin was politically connected to
-        the West but physically surrounded by East Germany.
+        This is not a perfect geographic map. It is a simple model to show why
+        Berlin was such a strange and important Cold War location.
       </p>
     </section>
 
-    <section class="section-wrap">
-      <div class="simple-map">
-        <div class="map-zone west-zone">
-          <h2>West Berlin</h2>
-          <p>Backed by the United States, Britain, and France.</p>
-        </div>
+    <section class="fake-map">
+      <button class="map-side west map-click" data-map="west">
+        <h2>West Berlin</h2>
+        <p>Backed by the U.S., Britain, and France.</p>
+      </button>
 
-        <div class="wall-divider">
-          <span>Wall</span>
-        </div>
-
-        <div class="map-zone east-zone">
-          <h2>East Berlin</h2>
-          <p>Controlled by East Germany and supported by the Soviet Union.</p>
-        </div>
+      <div class="wall-line">
+        <span>Berlin Wall</span>
       </div>
+
+      <button class="map-side east map-click" data-map="east">
+        <h2>East Berlin</h2>
+        <p>Controlled by East Germany and backed by the USSR.</p>
+      </button>
+
+      <button class="checkpoint map-click" data-map="checkpoint">Checkpoint Charlie</button>
     </section>
 
-    <section class="section-wrap three-column">
-      <article class="content-card">
-        <h2>West Berlin</h2>
-        <p>
-          West Berlin became a symbol of Western democracy and capitalism inside the
-          Soviet sphere of influence.
-        </p>
-      </article>
-
-      <article class="content-card">
-        <h2>East Berlin</h2>
-        <p>
-          East Berlin represented communist control in East Germany and was connected
-          to the Soviet bloc.
-        </p>
-      </article>
-
-      <article class="content-card">
-        <h2>Checkpoint Charlie</h2>
-        <p>
-          Checkpoint Charlie was one of the most famous crossing points between East
-          and West Berlin. It represented the tension between the two sides.
-        </p>
-      </article>
+    <section class="note-card wide" id="map-note">
+      <h2>Click a part of the map</h2>
+      <p>
+        Each side of the city had a different political meaning. Click West Berlin,
+        East Berlin, or Checkpoint Charlie to see why each mattered.
+      </p>
     </section>
 
   </main>
 
   <footer class="footer-note">
-  Cold War Mini Research Project — The Berlin Wall
+  Berlin Wall Mini Research Project — Cold War Era, 1945–1990
 </footer>
 
 <script src="script.js"></script>

@@ -1,22 +1,24 @@
-# Berlin Wall Project Website
+# Berlin Wall Mini Site
 
-Static website for the Cold War mini research project.
+Static website for the Cold War independent mini research project.
 
-## Pages
+## What is included
 
-- `index.html` - homepage
-- `briefing.html` - overview
-- `timeline.html` - key events
-- `map.html` - divided Berlin explanation
-- `ib-analysis.html` - IB and MANIA connections
+- `index.html` - home page
+- `briefing.html` - background and basic argument
+- `timeline.html` - clickable timeline
+- `map.html` - interactive divided city map
+- `ib-analysis.html` - MANIA, Cold War, Stalin, Gorbachev, 1948 Arab-Israeli War
 - `today.html` - modern connections
-- `sources.html` - research sources
+- `sources.html` - source list
+- `styles.css` - styling
+- `script.js` - simple interactions
 
-## Hosting on GitHub Pages
+## GitHub Pages
 
-1. Create a new GitHub repository.
-2. Upload all of these files.
+1. Create a GitHub repository.
+2. Upload all files in this folder.
 3. Go to Settings → Pages.
-4. Select "Deploy from a branch."
-5. Choose `main` and `/root`.
-6. Save and wait for the GitHub Pages link.
+4. Choose "Deploy from a branch."
+5. Select `main` and `/root`.
+6. Save and wait for the website link.
