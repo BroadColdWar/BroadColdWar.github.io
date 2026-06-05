@@ -1,13 +1,25 @@
-const sections = document.querySelectorAll('.section');
+var menuButton = document.querySelector('.menu-button');
+var siteNav = document.querySelector('.site-nav');
 
-sections.forEach((section) => section.classList.add('reveal'));
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
+if (menuButton && siteNav) {
+  menuButton.addEventListener('click', function () {
+    siteNav.classList.toggle('open');
   });
-}, { threshold: 0.14 });
+}
 
-sections.forEach((section) => observer.observe(section));
+var revealButton = document.querySelector('.reveal-button');
+var hiddenAnswer = document.querySelector('.hidden-answer');
+
+if (revealButton && hiddenAnswer) {
+  revealButton.addEventListener('click', function () {
+    hiddenAnswer.classList.toggle('show');
+  });
+}
+
+var timelineItems = document.querySelectorAll('.timeline-item');
+
+for (var i = 0; i < timelineItems.length; i++) {
+  timelineItems[i].addEventListener('click', function () {
+    this.classList.toggle('open');
+  });
+}

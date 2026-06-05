@@ -1,20 +1,29 @@
-# Cold War Dossier Website
+# Berlin Wall Mini Site
 
-A simple static website template for an IB History Cold War mini research project.
+This is a static website for the Cold War independent mini research project.
+It is built with plain HTML, CSS, and a little JavaScript.
 
-## How to use
+## Pages
 
-1. Edit `index.html` and replace the placeholder text.
-2. Edit `styles.css` if you want to change colors or layout.
-3. Upload the folder to a GitHub repository.
-4. Turn on GitHub Pages in the repository settings.
+- `index.html` - home page
+- `briefing.html` - basic background
+- `timeline.html` - clickable timeline
+- `map.html` - simple divided city visual
+- `ib-analysis.html` - IB theme connections
+- `today.html` - modern connections
+- `sources.html` - citations and image credits
 
-## GitHub Pages setup
+## How to put it on GitHub Pages
 
-- Go to your repository.
-- Click **Settings**.
-- Click **Pages**.
-- Under **Branch**, choose `main` and `/root`.
-- Click **Save**.
+1. Make a new GitHub repository.
+2. Upload these files into the repository.
+3. Go to Settings.
+4. Go to Pages.
+5. Under "Build and deployment," choose "Deploy from a branch."
+6. Pick the `main` branch and `/root` folder.
+7. Save it and wait for GitHub to publish the site.
 
-Your site should publish after a short delay.
+## Notes
+
+The text is intentionally still kind of draft-like so it can be edited into our own voice.
+The image links are from Wikimedia Commons file paths and should be checked again when making the final bibliography.

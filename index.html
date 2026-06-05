@@ -1,138 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cold War Dossier</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Berlin Wall Dossier</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="hero">
-    <nav class="nav">
-      <div class="brand">COLD WAR DOSSIER</div>
-      <div class="nav-links">
-        <a href="#brief">Brief</a>
-        <a href="#timeline">Timeline</a>
-        <a href="#evidence">Evidence</a>
-        <a href="#analysis">Analysis</a>
-        <a href="#today">Today</a>
-        <a href="#sources">Sources</a>
-      </div>
-    </nav>
+  <div class="paper-grain"></div>
 
-    <section class="hero-content">
-      <div class="stamp">DECLASSIFIED</div>
-      <p class="eyebrow">Independent Mini Research Project</p>
-      <h1>Operation / Topic Name</h1>
-      <p class="subtitle">
-        A crafted Cold War-era investigation connecting historical events, IB History themes, and the world today.
-      </p>
-      <a class="button" href="#brief">Open the File</a>
-    </section>
-  </header>
+  <header class="topbar">
+  <a class="brand" href="index.html">Berlin Wall File</a>
+  <button class="menu-button" aria-label="open menu">☰</button>
+  <nav class="site-nav">
+    <a href="briefing.html">Briefing</a>
+    <a href="timeline.html">Timeline</a>
+    <a href="map.html">Map</a>
+    <a href="ib-analysis.html">IB Analysis</a>
+    <a href="today.html">Today</a>
+    <a href="sources.html">Sources</a>
+  </nav>
+</header>
 
-  <main>
-    <section id="brief" class="section intro-grid">
-      <div>
-        <p class="section-label">01 / Mission Brief</p>
-        <h2>What happened?</h2>
-        <p>
-          Replace this paragraph with a short overview of your topic. Explain the who, what, when, where, and why in plain language.
+  <main class="page-wrap">
+
+    <section class="home-hero">
+      <div class="hero-text">
+        <p class="label">Declassified Classroom File</p>
+        <h1>The Berlin Wall</h1>
+        <p class="big-intro">
+          A mini exhibit about how one wall split a city, became the clearest
+          symbol of the Cold War, and still matters when people talk about
+          borders, propaganda, surveillance, and political freedom.
         </p>
-      </div>
-      <aside class="file-card">
-        <h3>Case File</h3>
-        <p><strong>Topic:</strong> [Your Topic]</p>
-        <p><strong>Years:</strong> [1945–1990]</p>
-        <p><strong>Region:</strong> [Location]</p>
-        <p><strong>Theme:</strong> Cold War / Authoritarian States / 20th Century Wars</p>
-      </aside>
-    </section>
-
-    <section id="timeline" class="section paper">
-      <p class="section-label">02 / Timeline</p>
-      <h2>Key moments</h2>
-      <div class="timeline">
-        <div class="timeline-item">
-          <span>Year</span>
-          <p><strong>Event title:</strong> Add a short description here.</p>
-        </div>
-        <div class="timeline-item">
-          <span>Year</span>
-          <p><strong>Event title:</strong> Add a short description here.</p>
-        </div>
-        <div class="timeline-item">
-          <span>Year</span>
-          <p><strong>Event title:</strong> Add a short description here.</p>
+        <div class="button-row">
+          <a class="main-button" href="briefing.html">Open the briefing</a>
+          <a class="quiet-button" href="timeline.html">View timeline</a>
         </div>
       </div>
+
+      <figure class="hero-photo">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/BerlinWall-BrandenburgGate.jpg" alt="People at the Berlin Wall near Brandenburg Gate">
+        <figcaption>Berlin Wall near Brandenburg Gate, November 1989.</figcaption>
+      </figure>
     </section>
 
-    <section id="evidence" class="section">
-      <p class="section-label">03 / Evidence Board</p>
-      <h2>People, places, and proof</h2>
-      <div class="cards">
-        <article class="card">
-          <div class="image-placeholder">Image</div>
-          <h3>Key Person</h3>
-          <p>Add a short profile explaining why this person mattered.</p>
-        </article>
-        <article class="card">
-          <div class="image-placeholder">Map</div>
-          <h3>Location</h3>
-          <p>Add a map or region explanation here.</p>
-        </article>
-        <article class="card">
-          <div class="image-placeholder">Doc</div>
-          <h3>Primary Source</h3>
-          <p>Add a quote, document, speech, image, or newspaper clipping.</p>
-        </article>
-      </div>
+    <section class="case-grid" aria-label="site sections">
+      <a class="case-card" href="briefing.html">
+        <span>01</span>
+        <h2>Mission Briefing</h2>
+        <p>The basics: what the Wall was, why it was built, and why Berlin mattered so much.</p>
+      </a>
+
+      <a class="case-card" href="timeline.html">
+        <span>02</span>
+        <h2>Timeline</h2>
+        <p>Important steps from postwar Germany to the opening of the Wall in 1989.</p>
+      </a>
+
+      <a class="case-card" href="map.html">
+        <span>03</span>
+        <h2>Divided City</h2>
+        <p>A simple map-style page showing East Berlin, West Berlin, and checkpoints.</p>
+      </a>
+
+      <a class="case-card" href="ib-analysis.html">
+        <span>04</span>
+        <h2>IB Analysis</h2>
+        <p>Connections to Cold War themes, authoritarian states, and class topics.</p>
+      </a>
+
+      <a class="case-card" href="today.html">
+        <span>05</span>
+        <h2>Why It Matters Now</h2>
+        <p>How the memory of the Wall connects to modern politics and the future.</p>
+      </a>
+
+      <a class="case-card" href="sources.html">
+        <span>06</span>
+        <h2>Evidence Locker</h2>
+        <p>Image credits, websites, and source notes for the bibliography.</p>
+      </a>
     </section>
 
-    <section id="analysis" class="section split">
-      <div>
-        <p class="section-label">04 / IB History Connection</p>
-        <h2>Why does this matter historically?</h2>
-        <p>
-          Connect your topic to one IB History theme and one specific event, person, or theory studied in class.
-        </p>
-      </div>
-      <div class="analysis-box">
-        <h3>Analysis Checklist</h3>
-        <ul>
-          <li>Cause and consequence</li>
-          <li>Ideology and power</li>
-          <li>Cold War tension or proxy conflict</li>
-          <li>Short-term and long-term effects</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="today" class="section paper">
-      <p class="section-label">05 / Modern Connection</p>
-      <h2>How does this connect to today?</h2>
-      <p>
-        Explain how your topic connects to modern politics, foreign policy, war, propaganda, intelligence, human rights, or global power.
-      </p>
-      <blockquote>
-        “Add one strong quote or takeaway here.”
-      </blockquote>
-    </section>
-
-    <section id="sources" class="section sources">
-      <p class="section-label">06 / Sources</p>
-      <h2>Works Cited</h2>
-      <ol>
-        <li>Source 1 — author, title, link/access date.</li>
-        <li>Source 2 — author, title, link/access date.</li>
-        <li>Source 3 — author, title, link/access date.</li>
-      </ol>
-    </section>
   </main>
 
-  <footer>
-    <p>Created by [Names] · IB History Cold War Mini Research Project</p>
+  <footer class="footer-note">
+    Cold War Mini Research Project — Berlin Wall, 1961-1989
   </footer>
 
   <script src="script.js"></script>
