@@ -3,15 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Divided City Map | Berlin Wall</title>
+  <title>Divided City Map | Berlin Wall Dossier</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="paper-grain"></div>
-
   <header class="topbar">
-  <a class="brand" href="index.html">Home</a>
+  <a class="brand" href="index.html">
+    <span class="brand-small">Cold War File</span>
+    <span class="brand-main">Berlin Wall</span>
+  </a>
+
   <button class="menu-button" aria-label="open menu">☰</button>
+
   <nav class="site-nav">
     <a href="briefing.html">Briefing</a>
     <a href="timeline.html">Timeline</a>
@@ -25,42 +29,46 @@
   <main class="page-wrap">
 
     <section class="page-title">
-      <h1>Divided City Map</h1>
-      <p>This is not meant to be a perfect map. It is a simple visual to explain the main idea fast.</p>
+      <p class="stamp">Divided City</p>
+      <h1>Interactive Map</h1>
+      <p>
+        This is not a perfect geographic map. It is a simple model to show why
+        Berlin was such a strange and important Cold War location.
+      </p>
     </section>
 
     <section class="fake-map">
-      <div class="map-side west">
+      <button class="map-side west map-click" data-map="west">
         <h2>West Berlin</h2>
-        <p>Capitalist, backed by the U.S., Britain, and France.</p>
-      </div>
+        <p>Backed by the U.S., Britain, and France.</p>
+      </button>
 
       <div class="wall-line">
         <span>Berlin Wall</span>
       </div>
 
-      <div class="map-side east">
+      <button class="map-side east map-click" data-map="east">
         <h2>East Berlin</h2>
-        <p>Communist, controlled by East Germany and backed by the USSR.</p>
-      </div>
+        <p>Controlled by East Germany and backed by the USSR.</p>
+      </button>
 
-      <button class="checkpoint">Checkpoint Charlie</button>
+      <button class="checkpoint map-click" data-map="checkpoint">Checkpoint Charlie</button>
     </section>
 
-    <section class="note-card wide">
-      <h2>Why the geography matters</h2>
+    <section class="note-card wide" id="map-note">
+      <h2>Click a part of the map</h2>
       <p>
-        West Berlin was not connected directly to West Germany. That made it vulnerable,
-        symbolic, and hard to defend. It also made the city a constant Cold War flashpoint.
+        Each side of the city had a different political meaning. Click West Berlin,
+        East Berlin, or Checkpoint Charlie to see why each mattered.
       </p>
     </section>
 
   </main>
 
   <footer class="footer-note">
-    Cold War Mini Research Project — Berlin Wall, 1961-1989
-  </footer>
+  Berlin Wall Mini Research Project — Cold War Era, 1945–1990
+</footer>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

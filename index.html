@@ -3,15 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Berlin Wall Dossier</title>
+  <title>Home | Berlin Wall Dossier</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="paper-grain"></div>
-
   <header class="topbar">
-  <a class="brand" href="index.html">Home</a>
+  <a class="brand" href="index.html">
+    <span class="brand-small">Cold War File</span>
+    <span class="brand-main">Berlin Wall</span>
+  </a>
+
   <button class="menu-button" aria-label="open menu">☰</button>
+
   <nav class="site-nav">
     <a href="briefing.html">Briefing</a>
     <a href="timeline.html">Timeline</a>
@@ -25,69 +29,75 @@
   <main class="page-wrap">
 
     <section class="home-hero">
-      <div class="hero-text">
+      <div class="hero-copy">
+        <p class="stamp">Declassified Exhibit</p>
         <h1>The Berlin Wall</h1>
-        <p class="big-intro">
-          A mini exhibit about how one wall split a city, became the clearest
-          symbol of the Cold War, and still matters when people talk about
-          borders, propaganda, surveillance, and political freedom.
+        <p class="tagline">
+          A Cold War file about alliances, fear, control, and how one city became
+          the most famous dividing line between two systems.
         </p>
+
         <div class="button-row">
-          <a class="main-button" href="briefing.html">Open the briefing</a>
-          <a class="quiet-button" href="timeline.html">View timeline</a>
+          <a class="main-button" href="briefing.html">Start the file</a>
+          <a class="quiet-button" href="ib-analysis.html">Jump to IB analysis</a>
         </div>
       </div>
 
-      <figure class="hero-photo">
-        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/BerlinWall-BrandenburgGate.jpg" alt="People at the Berlin Wall near Brandenburg Gate">
-        <figcaption>Berlin Wall near Brandenburg Gate, November 1989.</figcaption>
-      </figure>
+      <div class="hero-panel">
+        <div class="redacted-line"></div>
+        <p class="file-number">FILE #1961-1989</p>
+        <p>
+          This site is built like a mini intelligence folder. Each page opens one
+          part of the larger question: why did the Wall exist, what did it show
+          about the Cold War, and why do walls still show up in politics today?
+        </p>
+      </div>
     </section>
 
     <section class="case-grid" aria-label="site sections">
       <a class="case-card" href="briefing.html">
         <span>01</span>
         <h2>Mission Briefing</h2>
-        <p>The basics: what the Wall was, why it was built, and why Berlin mattered so much.</p>
+        <p>What the Wall was, why Berlin mattered, and why East Germany built it.</p>
       </a>
 
       <a class="case-card" href="timeline.html">
         <span>02</span>
-        <h2>Timeline</h2>
-        <p>Important steps from postwar Germany to the opening of the Wall in 1989.</p>
+        <h2>Clickable Timeline</h2>
+        <p>Open the major moments from 1945 to 1989.</p>
       </a>
 
       <a class="case-card" href="map.html">
         <span>03</span>
         <h2>Divided City</h2>
-        <p>A simple map-style page showing East Berlin, West Berlin, and checkpoints.</p>
+        <p>Click through the main zones and checkpoints.</p>
       </a>
 
       <a class="case-card" href="ib-analysis.html">
         <span>04</span>
         <h2>IB Analysis</h2>
-        <p>Connections to Cold War themes, authoritarian states, and class topics.</p>
+        <p>MANIA, alliances, Stalin, Gorbachev, and class connections.</p>
       </a>
 
       <a class="case-card" href="today.html">
         <span>05</span>
-        <h2>Why It Matters Now</h2>
-        <p>How the memory of the Wall connects to modern politics and the future.</p>
+        <h2>Today & Beyond</h2>
+        <p>Modern borders, surveillance, propaganda, and Trump's wall.</p>
       </a>
 
       <a class="case-card" href="sources.html">
         <span>06</span>
         <h2>Evidence Locker</h2>
-        <p>Image credits, websites, and source notes for the bibliography.</p>
+        <p>Sources and image credits for the project.</p>
       </a>
     </section>
 
   </main>
 
   <footer class="footer-note">
-    Cold War Mini Research Project — Berlin Wall, 1961-1989
-  </footer>
+  Berlin Wall Mini Research Project — Cold War Era, 1945–1990
+</footer>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
