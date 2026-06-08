@@ -29,38 +29,52 @@
   <main class="page-wrap">
 
     <section class="page-title">
-      <p class="stamp">Divided City</p>
-      <h1>Interactive Map</h1>
+      <h1>Map</h1>
       <p>
-        This is not a perfect geographic map. It is a simple model to show why
-        Berlin was such a strange and important Cold War location.
+        Not to scale. Berlin was a Western city sitting deep inside communist East Germany,
+        split between four powers in a single metro area. Hover anything.
       </p>
     </section>
 
     <section class="fake-map">
-      <button class="map-side west map-click" data-map="west">
+      <div class="map-side west" data-map="west">
         <h2>West Berlin</h2>
-        <p>Backed by the U.S., Britain, and France.</p>
-      </button>
-
-      <div class="wall-line">
-        <span>Berlin Wall</span>
+        <p class="side-sub">U.S. · British · French</p>
+        <div class="side-markers">
+          <div class="map-marker" data-map="gate">
+            <span class="marker-dot"></span>Brandenburg Gate
+          </div>
+          <div class="map-marker" data-map="kennedy">
+            <span class="marker-dot"></span>JFK's visit, 1963
+          </div>
+        </div>
       </div>
 
-      <button class="map-side east map-click" data-map="east">
-        <h2>East Berlin</h2>
-        <p>Controlled by East Germany and backed by the USSR.</p>
-      </button>
+      <div class="wall-strip" data-map="wall">
+        <div class="guard-tower" style="--d:0s"></div>
+        <div class="guard-tower" style="--d:1.1s"></div>
+        <div class="guard-tower" style="--d:2.2s"></div>
+      </div>
 
-      <button class="checkpoint map-click" data-map="checkpoint">Checkpoint Charlie</button>
+      <div class="map-side east" data-map="east">
+        <h2>East Berlin</h2>
+        <p class="side-sub">Soviet sector</p>
+        <div class="side-markers">
+          <div class="map-marker" data-map="stasi">
+            <span class="marker-dot"></span>Stasi HQ
+          </div>
+          <div class="map-marker" data-map="deathstrip">
+            <span class="marker-dot"></span>Death Strip
+          </div>
+        </div>
+      </div>
+
+      <button class="checkpoint" data-map="checkpoint">Checkpoint Charlie</button>
     </section>
 
     <section class="note-card wide" id="map-note">
-      <h2>Hover over the map</h2>
-      <p>
-        Each side of the city had a different political meaning. Hover over West Berlin,
-        East Berlin, or Checkpoint Charlie to see why each mattered.
-      </p>
+      <h2>Berlin, 1961–1989</h2>
+      <p>Hover over any part of the map to see what made it significant.</p>
     </section>
 
   </main>
