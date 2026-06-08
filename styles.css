@@ -135,14 +135,14 @@ body {
 
 .stamp {
   display: inline-block;
-  color: #ffb0a8;
-  border: 2px solid var(--red);
-  padding: 7px 10px;
+  color: white;
+  background: var(--red);
+  padding: 4px 10px;
   margin: 0 0 18px;
   text-transform: uppercase;
   letter-spacing: 2px;
+  font-size: 0.78rem;
   font-weight: bold;
-  transform: rotate(-2deg);
 }
 
 .hero-panel,
@@ -165,18 +165,27 @@ body {
   color: var(--ink);
 }
 
-.file-number {
-  color: var(--red);
-  font-weight: bold;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+.stat-row {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(20, 16, 10, 0.2);
 }
 
-.redacted-line {
-  width: 70%;
-  height: 18px;
-  margin-bottom: 32px;
-  background: var(--ink);
+.stat-num {
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: var(--red-dark);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--muted);
 }
 
 .button-row {
@@ -233,7 +242,7 @@ body {
 }
 
 .case-card:hover {
-  transform: translateY(-7px) rotate(-0.5deg);
+  transform: translateY(-7px);
   border-color: rgba(255, 231, 188, 0.45);
   background: #28231d;
 }
@@ -362,42 +371,97 @@ figcaption {
 }
 
 .timeline-list {
-  display: grid;
-  gap: 14px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 52px;
+}
+
+.timeline-list::before {
+  content: '';
+  position: absolute;
+  left: 16px;
+  top: 18px;
+  bottom: 18px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--red), rgba(169, 48, 36, 0.2));
 }
 
 .timeline-item {
+  position: relative;
   width: 100%;
   text-align: left;
-  cursor: pointer;
-  color: var(--ink);
-  background: var(--paper);
-  border: 1px solid rgba(20, 16, 10, 0.3);
-  padding: 18px;
-  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.28);
+  cursor: default;
+  color: var(--paper-light);
+  background: #1c1915;
+  border: 1px solid var(--line);
+  padding: 18px 22px;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -41px;
+  top: 20px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--red);
+  border: 3px solid var(--bg);
+  transition: transform 0.18s;
+}
+
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  left: -29px;
+  top: 25px;
+  width: 29px;
+  height: 2px;
+  background: var(--red);
+  opacity: 0.4;
+}
+
+.timeline-item:hover {
+  border-color: rgba(255, 231, 188, 0.4);
+  background: #28231d;
+}
+
+.timeline-item:hover::before {
+  transform: scale(1.35);
 }
 
 .timeline-item strong {
   display: block;
   color: var(--red);
   font-size: 1.45rem;
-  margin-bottom: 5px;
+  margin-bottom: 4px;
 }
 
 .timeline-item span {
   display: block;
-  font-size: 1.08rem;
+  font-size: 1.05rem;
 }
 
 .timeline-item small {
-  display: none;
-  margin-top: 12px;
-  font-size: 0.98rem;
+  display: block;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  margin-top: 0;
+  font-size: 0.95rem;
   line-height: 1.55;
+  color: #e6d6b9;
+  transition: max-height 0.35s ease, opacity 0.25s ease, margin-top 0.2s ease;
 }
 
+.timeline-item:hover small,
 .timeline-item.open small {
-  display: block;
+  max-height: 180px;
+  opacity: 1;
+  margin-top: 12px;
 }
 
 .fake-map {
@@ -471,13 +535,19 @@ figcaption {
 }
 
 .mania-card {
-  min-height: 230px;
+  min-height: 200px;
   padding: 20px;
   color: var(--paper-light);
-  cursor: pointer;
+  cursor: default;
   text-align: left;
   background: #1c1915;
   border: 1px solid var(--line);
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.mania-card:hover {
+  border-color: rgba(255, 231, 188, 0.4);
+  background: #28231d;
 }
 
 .mania-card strong {
@@ -494,18 +564,26 @@ figcaption {
 .mania-card span {
   display: block;
   font-size: 1.25rem;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .mania-card small {
-  display: none;
+  display: block;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  margin-top: 0;
   color: #e6d6b9;
   line-height: 1.55;
   font-size: 0.95rem;
+  transition: max-height 0.4s ease, opacity 0.3s ease, margin-top 0.2s ease;
 }
 
+.mania-card:hover small,
 .mania-card.open small {
-  display: block;
+  max-height: 250px;
+  opacity: 1;
+  margin-top: 8px;
 }
 
 .quiz-card {

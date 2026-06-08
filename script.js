@@ -7,17 +7,7 @@ if (menuButton && siteNav) {
   });
 }
 
-var revealButtons = document.querySelectorAll('.reveal-button');
-
-for (var i = 0; i < revealButtons.length; i++) {
-  revealButtons[i].addEventListener('click', function () {
-    var answer = this.parentElement.querySelector('.hidden-answer');
-    if (answer) {
-      answer.classList.toggle('show');
-    }
-  });
-}
-
+// Timeline — CSS :hover handles desktop; click toggles .open for touch
 var timelineItems = document.querySelectorAll('.timeline-item');
 
 for (var j = 0; j < timelineItems.length; j++) {
@@ -26,6 +16,7 @@ for (var j = 0; j < timelineItems.length; j++) {
   });
 }
 
+// MANIA cards — CSS :hover handles desktop; click toggles .open for touch
 var maniaCards = document.querySelectorAll('.mania-card');
 
 for (var k = 0; k < maniaCards.length; k++) {
@@ -34,6 +25,7 @@ for (var k = 0; k < maniaCards.length; k++) {
   });
 }
 
+// Map — mouseenter to show info, mouseleave to reset
 var mapButtons = document.querySelectorAll('.map-click');
 var mapNote = document.querySelector('#map-note');
 
@@ -52,12 +44,31 @@ var mapText = {
   }
 };
 
+var mapDefault = {
+  title: 'Hover over the map',
+  body: 'Each side of the city had a different political meaning. Hover over West Berlin, East Berlin, or Checkpoint Charlie to see why each mattered.'
+};
+
 for (var m = 0; m < mapButtons.length; m++) {
+  mapButtons[m].addEventListener('mouseenter', function () {
+    var section = this.getAttribute('data-map');
+    if (mapNote && mapText[section]) {
+      mapNote.innerHTML = '<h2>' + mapText[section].title + '</h2><p>' + mapText[section].body + '</p>';
+    }
+  });
+  // touch fallback
   mapButtons[m].addEventListener('click', function () {
     var section = this.getAttribute('data-map');
     if (mapNote && mapText[section]) {
       mapNote.innerHTML = '<h2>' + mapText[section].title + '</h2><p>' + mapText[section].body + '</p>';
     }
+  });
+}
+
+var fakeMap = document.querySelector('.fake-map');
+if (fakeMap && mapNote) {
+  fakeMap.addEventListener('mouseleave', function () {
+    mapNote.innerHTML = '<h2>' + mapDefault.title + '</h2><p>' + mapDefault.body + '</p>';
   });
 }
 
