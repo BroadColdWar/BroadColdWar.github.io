@@ -40,7 +40,7 @@ var mapText = {
   },
   gate: {
     title: 'Brandenburg Gate',
-    body: 'The Wall ran right past the Brandenburg Gate, cutting it off entirely. For 28 years it sat in no-man\'s land between East and West. Nobody from either side could get near it. Reagan gave his "tear down this wall" speech a few hundred meters away in 1987. When the Wall fell in 1989, it was the first place crowds gathered.'
+    body: 'The Wall ran right past the Brandenburg Gate, cutting it off entirely. For 28 years it sat in no-man\'s land between East and West. Nobody from either side could get near it. Reagan gave his "tear down this wall" speech a few hundred yards away in 1987. When the Wall fell in 1989, it was the first place crowds gathered.'
   },
   kennedy: {
     title: 'Kennedy\'s Visit, 1963',
@@ -48,7 +48,7 @@ var mapText = {
   },
   wall: {
     title: 'The Wall',
-    body: '155 km total length. Up to 3.6 meters tall. It was not just one wall. It was a system: inner wall, a floodlit death strip, outer wall, watchtowers every 300 meters, tripwires, and guard dogs. Built overnight starting August 13, 1961. Over 100 people died trying to cross it.'
+    body: '96 miles total length. Up to 12 feet tall. It was not just one wall. It was a system: inner wall, a floodlit death strip, outer wall, watchtowers every 330 yards, tripwires, and guard dogs. Built overnight starting August 13, 1961. Over 100 people died trying to cross it.'
   },
   stasi: {
     title: 'Stasi Headquarters',
@@ -111,66 +111,7 @@ for (var q = 0; q < quizOptions.length; q++) {
   });
 }
 
-// ---------------------------------------------------------------
-// Wikimedia Commons image loader
-// Resolves data-wiki filenames to real upload URLs in one API call
-// ---------------------------------------------------------------
-function loadWikiImages() {
-  var imgEls = Array.from(document.querySelectorAll('img[data-wiki]'));
-  var heroBg = document.querySelector('[data-wiki-bg]');
-
-  var filenames = imgEls.map(function (el) { return el.getAttribute('data-wiki'); });
-  if (heroBg) filenames.push(heroBg.getAttribute('data-wiki-bg'));
-  if (filenames.length === 0) return;
-
-  var titles = filenames.map(function (f) { return 'File:' + f; }).join('|');
-  var apiUrl = 'https://commons.wikimedia.org/w/api.php'
-    + '?action=query'
-    + '&titles=' + encodeURIComponent(titles)
-    + '&prop=imageinfo'
-    + '&iiprop=url'
-    + '&iiurlwidth=1200'
-    + '&format=json'
-    + '&origin=*';
-
-  fetch(apiUrl)
-    .then(function (r) { return r.json(); })
-    .then(function (data) {
-      var urlMap = {};
-      Object.keys(data.query.pages).forEach(function (id) {
-        var page = data.query.pages[id];
-        if (page.imageinfo && page.imageinfo[0]) {
-          var name = page.title.replace(/^File:/, '');
-          urlMap[name] = page.imageinfo[0].thumburl || page.imageinfo[0].url;
-        }
-      });
-
-      imgEls.forEach(function (img) {
-        var name = img.getAttribute('data-wiki');
-        if (urlMap[name]) {
-          img.src = urlMap[name];
-          img.removeAttribute('onerror');
-        } else {
-          var wrap = img.closest('figure') || img.closest('.tl-img-wrap');
-          if (wrap) wrap.style.display = 'none';
-        }
-      });
-
-      if (heroBg) {
-        var name = heroBg.getAttribute('data-wiki-bg');
-        if (urlMap[name]) {
-          heroBg.style.backgroundImage =
-            'linear-gradient(rgba(0,0,0,0.42), rgba(0,0,0,0.72)), url(' + urlMap[name] + ')';
-        }
-      }
-    })
-    .catch(function () {
-      // API unreachable — fall back to CSS gradient for bg, hide unloaded imgs
-      imgEls.forEach(function (img) {
-        var wrap = img.closest('figure') || img.closest('.tl-img-wrap');
-        if (wrap && !img.src) wrap.style.display = 'none';
-      });
-    });
+function hideImgParent(img) {
+  var w = img.closest('figure') || img.closest('.tl-img-wrap');
+  if (w) w.style.display = 'none';
 }
-
-loadWikiImages();

@@ -106,7 +106,7 @@ body {
   padding: 28px;
   background:
     linear-gradient(rgba(0, 0, 0, 0.38), rgba(0, 0, 0, 0.74)),
-    linear-gradient(135deg, #1c1812, #0e0c0a);
+    url('https://upload.wikimedia.org/wikipedia/commons/5/5d/Berlinermauer.jpg');
   background-size: cover;
   background-position: center;
   border: 1px solid var(--line);
@@ -337,12 +337,6 @@ figcaption {
   padding-top: 9px;
 }
 
-img[data-wiki] {
-  background: #1a1714;
-  min-height: 180px;
-  display: block;
-  width: 100%;
-}
 
 .click-box {
   border: 1px dashed var(--red);
@@ -418,10 +412,11 @@ img[data-wiki] {
 
 .tl-img-wrap {
   width: 0;
+  height: 0;
   overflow: hidden;
   opacity: 0;
   flex-shrink: 0;
-  transition: width 0.38s ease, opacity 0.3s ease, margin-left 0.35s ease;
+  transition: width 0.38s ease, height 0.35s ease, opacity 0.3s ease, margin-left 0.35s ease;
   margin-left: 0;
 }
 
@@ -436,6 +431,7 @@ img[data-wiki] {
 .timeline-item:hover .tl-img-wrap,
 .timeline-item.open .tl-img-wrap {
   width: 230px;
+  height: 148px;
   opacity: 1;
   margin-left: 20px;
 }
@@ -513,6 +509,12 @@ img[data-wiki] {
   border: 10px solid #2b261e;
   background: var(--paper-dark);
   box-shadow: var(--shadow);
+  clip-path: polygon(
+    0% 0%,    25% 0%,   45% 5%,   62% 0%,   82% 2%,   100% 0%,
+    100% 30%, 98% 52%,  100% 68%, 96% 80%,  100% 90%, 88% 100%,
+    68% 97%,  50% 100%, 32% 97%,  14% 100%,
+    0% 88%,   3% 68%,   0% 48%,   3% 28%
+  );
 }
 
 .map-side {
@@ -546,25 +548,26 @@ img[data-wiki] {
 }
 
 .map-marker {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.86rem;
+  display: block;
+  padding: 7px 10px 7px 12px;
+  font-size: 0.83rem;
   cursor: pointer;
-  opacity: 0.85;
-  transition: opacity 0.15s;
+  border-left: 3px solid var(--red);
+  background: rgba(20, 16, 10, 0.18);
+  transition: background 0.15s, padding-left 0.15s;
 }
 
 .map-marker:hover {
-  opacity: 1;
+  background: rgba(20, 16, 10, 0.38);
+  padding-left: 16px;
 }
 
-.marker-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--red);
-  flex-shrink: 0;
+.east .map-marker {
+  background: rgba(0, 0, 0, 0.28);
+}
+
+.east .map-marker:hover {
+  background: rgba(0, 0, 0, 0.48);
 }
 
 .west {
@@ -790,6 +793,144 @@ img[data-wiki] {
   font-size: 0.9rem;
 }
 
+/* ---- briefing expand cards ---- */
+.expand-card {
+  cursor: default;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.expand-card:hover {
+  background: var(--paper-dark);
+}
+
+.expand-card p {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  margin-top: 0;
+  transition: max-height 0.45s ease, opacity 0.3s ease, margin-top 0.25s ease;
+}
+
+.expand-card:hover p {
+  max-height: 300px;
+  opacity: 1;
+  margin-top: 10px;
+}
+
+.card-sub {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-top: 6px;
+}
+
+/* ---- connections cards (ib-analysis) ---- */
+.analysis-grid .note-card {
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.2s;
+}
+
+.analysis-grid .note-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--red);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.analysis-grid .note-card:hover::after {
+  transform: scaleX(1);
+}
+
+.analysis-grid .note-card:hover {
+  background: var(--paper-dark);
+}
+
+.analysis-grid .note-card p {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  margin-top: 0;
+  transition: max-height 0.45s ease, opacity 0.3s ease, margin-top 0.25s ease;
+}
+
+.analysis-grid .note-card:hover p {
+  max-height: 280px;
+  opacity: 1;
+  margin-top: 10px;
+}
+
+/* ---- flip cards (today page) ---- */
+.flip-card {
+  height: 240px;
+  perspective: 1200px;
+}
+
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.55s ease;
+}
+
+.flip-card:hover .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-front,
+.flip-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  padding: 24px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.flip-front {
+  background: var(--paper);
+  color: var(--ink);
+  border: 1px solid rgba(20, 16, 10, 0.3);
+  box-shadow: var(--shadow);
+}
+
+.flip-back {
+  background: #1c1915;
+  color: var(--paper-light);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  transform: rotateY(180deg);
+}
+
+.flip-front h2 {
+  margin: 0 0 8px;
+}
+
+.flip-tag {
+  margin: 0;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--red-dark);
+}
+
+.flip-back p {
+  margin: 0;
+  line-height: 1.58;
+  font-size: 0.92rem;
+}
+
 @media (max-width: 850px) {
   .menu-button {
     display: block;
@@ -828,6 +969,7 @@ img[data-wiki] {
 
   .fake-map {
     grid-template-columns: 1fr;
+    clip-path: none;
   }
 
   .wall-strip {
@@ -835,5 +977,9 @@ img[data-wiki] {
     min-height: 56px;
     justify-content: space-around;
     padding: 0 20px;
+  }
+
+  .flip-card {
+    height: 260px;
   }
 }
